@@ -1,6 +1,10 @@
 fish ?.?.? (released ???)
 =========================
 
+Deprecations and removed features
+---------------------------------
+- `--command` and `--path` options in `complete` no longer unescape their value.
+
 Interactive improvements
 ------------------------
 - On the first run after upgrading from an older version, fish will try harder to check if the current theme matches a historical default, in which case fish won't create ``~/.config/fish/conf.d/fish_frozen_theme.fish``.
