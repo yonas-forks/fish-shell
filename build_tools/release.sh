@@ -255,6 +255,28 @@ do
     sleep 20
 done
 
+milestone_version="$(
+    if echo "$version" | grep -q '\.0$'; then
+        echo "$minor_version"
+    else
+        echo "$version"
+    fi
+)"
+milestone_number() {
+    gh_api_repo milestones?state=open |
+        jq --arg name "fish $1" '
+            .[] | select(.title == $name) | .number
+        '
+}
+gh_api_repo milestones/"$(milestone_number "$milestone_version")" \
+    --method PATCH --raw-field state=closed
+next_minor_version=$(echo "$minor_version" |
+    awk -F. '{ printf "%s.%s", $1, $2+1 }')
+if [ -z "$(milestone_number "$next_minor_version")" ]; then
+    gh_api_repo milestones --method POST \
+        --raw-field title="fish $next_minor_version"
+fi
+
 (
     cd "$fish_site"
     make new-release
@@ -289,29 +311,6 @@ EOF
     CreateCommit "start new cycle"
     git push "$remote" HEAD:master
 } fi
-
-milestone_version="$(
-    if echo "$version" | grep -q '\.0$'; then
-        echo "$minor_version"
-    else
-        echo "$version"
-    fi
-)"
-milestone_number() {
-    gh_api_repo milestones?state=open |
-        jq --arg name "fish $1" '
-            .[] | select(.title == $name) | .number
-        '
-}
-gh_api_repo milestones/"$(milestone_number "$milestone_version")" \
-    --method PATCH --raw-field state=closed
-
-next_minor_version=$(echo "$minor_version" |
-    awk -F. '{ printf "%s.%s", $1, $2+1 }')
-if [ -z "$(milestone_number "$next_minor_version")" ]; then
-    gh_api_repo milestones --method POST \
-        --raw-field title="fish $next_minor_version"
-fi
 
 exit
 
