@@ -1,6 +1,8 @@
 fish ?.?.? (released ???)
 =========================
 
+This release fixes a regression in 4.7.0 that caused the web config (``fish_config``) to fail to start (:issue:`12717`).
+
 fish 4.7.0 (released May 05, 2026)
 ==================================
 
