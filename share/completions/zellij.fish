@@ -1,1 +1,1 @@
-zellij setup --generate-completion fish
+zellij setup --generate-completion fish | source
