@@ -20628,6 +20628,9 @@ msgstr ""
 msgid "Do not update index or working tree"
 msgstr ""
 
+msgid "Do not update references"
+msgstr ""
+
 msgid "Do not update the cache in vendor/cache with the newly bundled gems"
 msgstr ""
 
@@ -51885,6 +51888,9 @@ msgstr ""
 msgid "Revokes an authentication token"
 msgstr ""
 
+msgid "Rewrite a commit message"
+msgstr ""
+
 msgid "Rewrite all not-found requests to `index.html`"
 msgstr ""
 
@@ -51895,6 +51901,9 @@ msgid "Rewrite config files to canonical format"
 msgstr ""
 
 msgid "Rewrite file in FORMAT"
+msgstr ""
+
+msgid "Rewrite history"
 msgstr ""
 
 msgid "Rewrite rule (e.g., 'a[b:len(a)] -> a[b:]')"
@@ -63970,6 +63979,9 @@ msgid "Split output"
 msgstr ""
 
 msgid "Split stdout and stderr in test logs"
+msgstr ""
+
+msgid "Split up a commit"
 msgstr ""
 
 msgid "Spoof MAC address"
