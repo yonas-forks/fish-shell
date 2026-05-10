@@ -30,9 +30,9 @@ isolated-tmux send-keys C-u C-l 'read' Enter
 tmux-sleep
 isolated-tmux send-keys read-input Enter
 tmux-sleep
-isolated-tmux send-keys \
-    'set fish_history' Enter \
-    'true some command; read' Enter
+isolated-tmux send-keys 'set fish_history' Enter
+tmux-sleep
+isolated-tmux send-keys 'true some command; read' Enter
 tmux-sleep
 isolated-tmux send-keys C-p
 tmux-sleep
