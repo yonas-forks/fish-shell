@@ -20306,6 +20306,9 @@ msgstr "Ne pas opérer récursivement dans les sous-projets"
 msgid "Do not recurse unless -depth is specified"
 msgstr "Ne pas faire de récursion sauf si -depth est spécifié"
 
+msgid "Do not recursively fetch submodules"
+msgstr ""
+
 msgid "Do not redirect output to a pager"
 msgstr ""
 
@@ -48717,6 +48720,9 @@ msgid "Recursively destroy later snapshot, bookmarks and clones"
 msgstr "Détruire récursivement les instantanés, marque-pages et clones postérieurs"
 
 msgid "Recursively expand directory"
+msgstr ""
+
+msgid "Recursively fetch submodules"
 msgstr ""
 
 msgid "Recursively list ports depending on given port"

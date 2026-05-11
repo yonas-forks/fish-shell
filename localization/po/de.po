@@ -20177,6 +20177,9 @@ msgstr ""
 msgid "Do not recurse unless -depth is specified"
 msgstr ""
 
+msgid "Do not recursively fetch submodules"
+msgstr ""
+
 msgid "Do not redirect output to a pager"
 msgstr ""
 
@@ -48588,6 +48591,9 @@ msgid "Recursively destroy later snapshot, bookmarks and clones"
 msgstr ""
 
 msgid "Recursively expand directory"
+msgstr ""
+
+msgid "Recursively fetch submodules"
 msgstr ""
 
 msgid "Recursively list ports depending on given port"
