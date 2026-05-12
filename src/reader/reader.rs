@@ -33,7 +33,10 @@ use crate::{
     },
     editable_line::{Edit, EditableLine, line_at_cursor, range_of_line_at_cursor},
     env::{EnvMode, EnvStack, Environment, Statuses},
-    env_dispatch::{MIDNIGHT_COMMANDER_SID, handle_emoji_width},
+    env_dispatch::{
+        MIDNIGHT_COMMANDER_SID, handle_emoji_width, handle_fish_cursor_end_mode_change,
+        handle_fish_cursor_selection_mode_change,
+    },
     event,
     exec::exec_subshell,
     expand::{ExpandFlags, ExpandResultCode, expand_one, expand_string, expand_tilde},
@@ -408,6 +411,9 @@ pub fn reader_push<'a>(
     reader_data_stack().push(data);
     let data = current_data().unwrap();
     data.command_line_changed(EditableLineTag::Commandline, AutosuggestionUpdate::Remove);
+    // TODO Handle other things in src/env_dispatch.rs
+    handle_fish_cursor_selection_mode_change(parser.vars());
+    handle_fish_cursor_end_mode_change(parser.vars());
     Reader { data, parser }
 }
 
