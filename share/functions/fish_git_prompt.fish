@@ -408,9 +408,17 @@ end
 ### helper functions
 
 function __fish_git_prompt_status_porcelain_modulo_rename_source
-    git -c core.fsmonitor= status --porcelain -z $argv |
-        string split0 |
-        string match -r '^[ MADRCTU?!]{2} .*'
+    set -l skip false
+    for line in (git -c core.fsmonitor= status --porcelain -z $argv | string split0)
+        if $skip
+            set skip false
+            continue
+        end
+        printf %s\n $line
+        if string match -rq -- ^[RC] $line
+            set skip true
+        end
+    end
 end
 
 function __fish_git_prompt_informative_status
