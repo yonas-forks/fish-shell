@@ -301,7 +301,7 @@ function fish_git_prompt --description "Prompt function for Git"
                 # Renames and copies in porcelain -z output have an extra NUL-delimited
                 # field for the source path. Filter to entries starting with a valid
                 # two-char status code followed by a space to skip those bare paths.
-                set -l stat (command git -c core.fsmonitor= status --porcelain -z $opt | string split0 | string match -r '^[ MADRCTU?!]{2} .*')
+                set -l stat (__fish_git_prompt_status_porcelain_modulo_rename_source $opt)
 
                 set dirtystate (string match -qr '^.[ACDMRTU]' -- $stat; and echo 1)
                 if test -n "$sha"
@@ -407,6 +407,12 @@ end
 
 ### helper functions
 
+function __fish_git_prompt_status_porcelain_modulo_rename_source
+    git -c core.fsmonitor= status --porcelain -z $argv |
+        string split0 |
+        string match -r '^[ MADRCTU?!]{2} .*'
+end
+
 function __fish_git_prompt_informative_status
     set -l stashstate 0
     set -l stashfile "$argv[1]/logs/refs/stash"
@@ -427,7 +433,7 @@ function __fish_git_prompt_informative_status
     # Renames and copies in porcelain -z output have an extra NUL-delimited
     # field for the source path. Filter to entries starting with a valid
     # two-char status code followed by a space to skip those bare paths.
-    set -l stats (string sub -l 2 (git -c core.fsmonitor= status --porcelain -z $untr | string split0 | string match -r '^[ MADRCTU?!]{2} .*'))
+    set -l stats (__fish_git_prompt_status_porcelain_modulo_rename_source $untr)
     set -l invalidstate (string match -r '^UU' $stats | count)
     set -l stagedstate (string match -r '^[ACDMRT].' $stats | count)
     set -l dirtystate (string match -r '^.[ACDMRT]' $stats | count)
