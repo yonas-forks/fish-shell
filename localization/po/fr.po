@@ -4502,7 +4502,7 @@ msgstr ""
 msgid "(required) the path to the CSV file that defines the records to upsert"
 msgstr ""
 
-msgid "(required) the root directory containing the Metadata API–formatted metadata"
+msgid "(required) the root directory containing the Metadata API-formatted metadata"
 msgstr ""
 
 msgid "(required) the sObject type of the records you want to upsert"
@@ -47811,7 +47811,7 @@ msgid "Quiet output (default=verbose)"
 msgstr "Sortie silencieuse (verbeuse par défaut)"
 
 msgid "Quiet output - only show errors"
-msgstr "Sortie silencieuse – n’afficher que les erreurs"
+msgstr "Sortie silencieuse - n’afficher que les erreurs"
 
 msgid "Quiet some status messages"
 msgstr ""
@@ -52005,7 +52005,7 @@ msgid "Review the dpec file before creating a .rpm"
 msgstr ""
 
 msgid "Revision - symbolic or numeric."
-msgstr "Révision – symbolique ou numérique"
+msgstr "Révision - symbolique ou numérique"
 
 msgid "Revoke access from users"
 msgstr ""
@@ -57873,7 +57873,7 @@ msgid "Short name or spec of CompUnit::Repository to install to"
 msgstr ""
 
 msgid "Short patch - one liner per file."
-msgstr "Patch concis – une ligne par fichier"
+msgstr "Patch concis - une ligne par fichier"
 
 msgid "Short title for start of progress meter"
 msgstr ""
@@ -77756,7 +77756,7 @@ msgstr "Afficher les variables de configuration au format shell"
 msgid "output diffstat-style summary of changes"
 msgstr "Afficher un résumé des modifications à la diffstat"
 
-msgid "output directory to store the Metadata API–formatted files in"
+msgid "output directory to store the Metadata API-formatted files in"
 msgstr ""
 
 msgid "output encoding"
@@ -80180,7 +80180,7 @@ msgstr "Nombre de lignes à afficher"
 msgid "the org to list the apps for"
 msgstr "Spécifier l’organisation dont les applications sont à lister"
 
-msgid "the output directory to store the source–formatted files"
+msgid "the output directory to store the source-formatted files"
 msgstr ""
 
 msgid "the streaming client socket timeout (in minutes)"

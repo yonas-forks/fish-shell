@@ -4376,7 +4376,7 @@ msgstr ""
 msgid "(required) the path to the CSV file that defines the records to upsert"
 msgstr ""
 
-msgid "(required) the root directory containing the Metadata API–formatted metadata"
+msgid "(required) the root directory containing the Metadata API-formatted metadata"
 msgstr ""
 
 msgid "(required) the sObject type of the records you want to upsert"
@@ -77630,7 +77630,7 @@ msgstr ""
 msgid "output diffstat-style summary of changes"
 msgstr ""
 
-msgid "output directory to store the Metadata API–formatted files in"
+msgid "output directory to store the Metadata API-formatted files in"
 msgstr ""
 
 msgid "output encoding"
@@ -80054,7 +80054,7 @@ msgstr ""
 msgid "the org to list the apps for"
 msgstr ""
 
-msgid "the output directory to store the source–formatted files"
+msgid "the output directory to store the source-formatted files"
 msgstr ""
 
 msgid "the streaming client socket timeout (in minutes)"
