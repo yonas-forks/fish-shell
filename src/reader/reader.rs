@@ -7091,7 +7091,6 @@ impl<'a> Reader<'a> {
         if all_matches_exact_or_prefix {
             // Try to find a common prefix to insert among the surviving completions.
             let mut flags = CompleteFlags::empty();
-            let mut prefix_is_partial_completion = false;
             let mut first = true;
             for c in &comp {
                 if c.flags.contains(CompleteFlags::SUPPRESS_PAGER_PREFIX) {
@@ -7115,7 +7114,6 @@ impl<'a> Reader<'a> {
 
                     // idx is now the length of the new common prefix.
                     common_prefix = common_prefix.slice_to(idx);
-                    prefix_is_partial_completion = true;
 
                     // Early out if we decide there's no common prefix.
                     if idx == 0 {
@@ -7132,11 +7130,8 @@ impl<'a> Reader<'a> {
             assert!(!use_prefix || !common_prefix.is_empty());
 
             if use_prefix {
-                // We got something. If more than one completion contributed, then it means we have
-                // a prefix; don't insert a space after it.
-                if prefix_is_partial_completion {
-                    flags |= CompleteFlags::NO_SPACE;
-                }
+                // More than one completion contributed, so don't insert a space after it.
+                flags |= CompleteFlags::NO_SPACE;
                 self.completion_insert(
                     common_prefix,
                     token_range.end,

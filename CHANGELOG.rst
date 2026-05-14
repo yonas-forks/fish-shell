@@ -13,6 +13,7 @@ Interactive improvements
 Regression fixes:
 -----------------
 - (from 4.4) Vi mode ``x`` in :doc:`builtin read <cmds/read>` (:issue:`12724`).
+- (from 4.3.3) Repeated tab would sometimes insert smartcase completions redundantly.
 
 fish 4.7.1 (released May 08, 2026)
 ==================================
